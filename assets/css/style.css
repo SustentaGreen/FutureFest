@@ -1,0 +1,758 @@
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+:root {
+	--ff-primary: "Cairo", sans-serif;
+	
+	--clr-background: 	#F5F5F5;
+	--clr-white: 		#F1FCDE;
+	--clr-black: 		#090E01;
+	--clr-light-green: 	#DEF8AF;
+	--clr-medium-green: #88CC11;
+	--clr-dark-green: 	#456809;
+	
+	--spacing: 0.25rem;
+	--transition: all 0.2s linear;
+	--dark-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: var(--ff-primary);
+	background-color: #F5F5F5;
+}
+
+a {
+	text-decoration: none;
+}
+
+p {
+    font-size: 1.6px;
+	line-height: 1.8;
+}
+
+section {
+	min-width: 37px;
+	padding: 1.6px;
+}
+
+section:nth-child(2n + 1) {
+	background: #ffffff;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+.section__titulo {
+	font-size: 4.8rem;
+	font-weight: 900;
+	text-transform: uppercase;
+	padding-top: 1.6rem;
+	padding-bottom: 3.2rem;
+	text-align: center;
+}
+
+.section__titulo--destaque {
+	color: #88CC11;
+}
+
+@media screen and (min-width: 625px) {
+	section:nth-child(2n + 1) {
+		padding-top: 5.6rem;
+		padding-bottom: 5.6rem;
+	}
+}
+
+@media screen and (min-width: 1170px) {
+	section {
+		padding: 1.6rem calc((100% - 117rem - 1.6rem) / 2);
+	}
+}
+
+
+/*menu em mobile*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.fixed-header {
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+	background-color: #fff; /* Adapte a cor de fundo conforme necessário */
+	box-shadow: 0px 3px 10px #464646;
+  }
+  
+  
+header {
+    background-color: #ffffff;
+    box-shadow: 0px 3px 10px #464646;
+}
+
+.nav-link:hover {
+    color: #88CC11;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 6rem;
+}
+
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 1.50rem;
+    color: #010101;
+    font-weight: 700;
+}
+
+
+
+
+.login-button button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #0187a7
+}
+
+.login-button button a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+
+.logo {
+    width: 165px;
+    height: auto;
+}
+
+.logo h1 {
+    color: #fff;
+}
+
+
+.mobile-menu-icon {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Posiciona o menu abaixo do header */
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    z-index: 999;
+    max-width: 220px; /* Defina o tamanho máximo do menu conforme necessário */
+    margin: auto; /* Centraliza o menu horizontalmente */
+    overflow-y: auto; /* Adiciona uma barra de rolagem caso o conteúdo seja maior que o tamanho máximo */
+	opacity: 0; /* Começa invisível */
+    transform: translateY(-20px); /* Move para cima */
+    transition: opacity 0.3s, transform 0.3s;
+	background-color: #ffffff; /* Adapte a cor de fundo conforme necessário */
+    box-shadow: 0px 3px 10px #464646;
+}
+
+@media screen and (max-width: 730px) {
+    .nav-bar {
+        padding: 1.5rem 4rem;
+    }
+    .nav-item {
+        display: none;
+    }
+    .login-button {
+        display: none;
+    }
+    .mobile-menu-icon {
+        display: block;
+    }
+    .mobile-menu-icon button {
+        background-color:#090707;
+        border: none;
+        cursor: pointer;
+    }
+    .mobile-menu ul {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		padding-bottom: 1rem;
+	}	
+    .mobile-menu .nav-item {
+		display: block;
+		padding-top: 1.2rem;
+	}
+    .mobile-menu .login-button {
+		display: block;
+		padding: 1rem 2rem;
+	}
+	
+	.mobile-menu .login-button button {
+		width: 100%;
+	}
+	
+	.open {
+		display: block;
+		position: absolute;
+		top: 10%; /* Posiciona o menu abaixo do header */
+		left: 25%;
+		right: 0;
+		width: 100%;
+		opacity: 1; /* Torna visível quando aberto */
+        transform: translateY(0); 
+	}
+}
+
+
+/*hero*/
+
+.hero {
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+.hero__gif {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -1;
+}
+
+.hero-texto {
+	min-width: 37rem;
+	padding: 1.6rem;
+}
+
+.hero-texto__titulo {
+	font-weight: 900;
+	font-size: 5.2rem;
+	color: #8eef78;
+	text-transform: uppercase;
+}
+
+.hero-texto__descricao {
+	font-size: 2.4rem;
+	font-weight: 600;
+	color: #F5F5F5;
+	max-width: 57rem;
+	margin: 1rem 0;
+}
+
+.hero-texto__cta {
+	display: block;
+	font-size: 3.6rem;
+	font-weight: 600;
+	color: #F5F5F5;
+	width: 27rem;
+	text-align: center;
+	background: #88CC11;
+	padding: 1.6rem;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	transition: var(--transition);
+}
+
+.hero-texto__cta:hover {
+	letter-spacing: .6rem;
+}
+
+@media screen and (min-width: 960px) {
+	.hero-texto__titulo {
+		font-size: 7.2rem;
+	}
+
+	.hero-texto__titulo--linha-2 {
+		font-size: 6.4rem;
+	}
+}
+
+@media screen and (max-width: 624px){
+    .hero-texto__titulo {
+        font-size: 2.8rem; 
+    }
+	.hero-texto__descricao{
+		font-size: 2rem;
+	}
+}
+
+@media screen and (min-width: 1170px) {
+	.hero-texto {
+		padding: 1.6rem calc((100% - 117rem - 1.6rem) / 2);
+	}
+}
+
+
+/**********************************/
+/* Pacotes (Pacote com nossas informações)
+/**********************************/
+
+.pacotes {
+	display: flex;
+	position: relative;
+	overflow-x: auto;
+}
+
+.pacotes::after {
+	content: "→";
+	position: absolute;
+	font-size: 3.6rem;
+	font-weight: 900;
+	color: red;
+	top: .5rem;
+	right: 5.2rem;
+	animation: arrow .5s ease-in 0s infinite alternate;
+}
+
+@keyframes arrow {
+	from {
+		right: 5.2rem;
+	}
+
+	to {
+		right: 3.2rem;
+	}
+}
+
+.pacote {
+	flex-shrink: 0;
+	background: #DEF8AF;
+	max-width: 37rem;
+	cursor: pointer;
+	box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+.pacote + .pacote {
+	margin-left: 3rem;
+}
+
+.pacote__info {
+	padding: 1.6rem;
+}
+
+
+.pacote__thumb {
+    margin-left: auto; /* Isso empurra a imagem para a direita dentro do contêiner .pacote */
+    margin-right: auto; /* Isso também é adicionado para centralizar a imagem no caso de larguras menores */
+    display: block; /* Garante que a margem automática funcione corretamente */
+}
+
+
+.info-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.info-header__anos{
+	font-size: 1.6rem;
+	font-weight: 600;
+}
+
+.info-header__titulo {
+	font-size: 2.6rem;
+	font-weight: 600;
+}
+
+.info-body {
+	margin: 1.6rem 0;
+	font-size: 1.5rem;
+}
+
+.info-footer {
+	display: flex;
+	font-size: 1.6rem;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@media screen and (min-width: 805px){
+	.pacotes {
+		flex-wrap: wrap;
+		justify-content: space-between;
+		overflow: visible;
+		padding-bottom: 3.2rem;
+	}
+
+	.pacote {
+		transition: all 0.2s linear;
+	}
+
+	.pacote:hover {
+		transform: scale(1.02);
+	}
+	
+	.pacotes::after {
+		content: "";
+	}
+	
+	.pacote + .pacote {
+		margin: 0;
+	}
+
+	.pacote:nth-child(n+3) {
+		margin-top: 3rem;
+	}
+}
+
+@media screen and (min-width: 1150px){
+	.pacote:nth-child(3) {
+		margin-top: 0;
+	}
+}
+
+/**********************************/
+/* Diferenciais (Porque é o layout mais diferente do site) (Abrange toda a parte de Como Sustentar)
+/**********************************/
+
+#diferenciais {
+    background-color: var(--clr-light-green); /* Cor de fundo desejada, neste caso, verde claro */
+    padding: 2rem; /* Ajuste o valor de padding conforme necessário */
+}
+
+.diferenciais {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+
+.diferencial + .diferencial {
+	margin-top: 1.6rem;
+}
+
+.diferencial__titulo {
+	font-size: 2.4rem;
+	font-weight: 400;
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+}
+
+.diferencial__descricao {
+	width: 28.8rem;
+	font-size: 1.8rem;
+	margin-top: 1rem;
+}
+
+.diferencial__imagem {
+    display: inline-block; /* Torna o elemento um bloco em linha */
+    vertical-align: middle; /* Alinha verticalmente */
+    margin-right: 0.8rem; /* Ajusta a margem para espaçamento */
+    font-weight: 900;
+    font-size: 3.6rem;
+    width: 74px; /* Ajuste a largura conforme necessário */
+    height: 66.25px; /* A juste a altura conforme necessário */
+}
+
+.diferencial__titulo {
+    display: inline-block; /* Torna o elemento um bloco em linha */
+    vertical-align: middle; /* Alinha verticalmente */
+    font-size: 2.4rem; /* Ajusta o tamanho do texto conforme necessário */
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.section__titulo-ComoSustentar{
+	font-size: 4.8rem;
+	font-weight: 900;
+	text-transform: uppercase;
+	padding-top: 1.6rem;
+	padding-bottom: 3.2rem;
+	text-align: center;
+}
+
+.section__titulo-ComoSustentar-destaque{
+	color: #88CC11;
+}
+
+@media screen and (max-width: 624px){
+    .section__titulo-ComoSustentar {
+        font-size: 4rem; /* Ou qualquer tamanho que desejar para telas menores */
+    }
+}
+
+@media screen and (min-width: 625px){
+	.diferenciais {
+		justify-content: space-between;
+		
+	}
+
+	.diferencial + .diferencial {
+		margin-top: 0;
+	}
+}
+
+
+
+/* Projetos */
+.projeto-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.projeto {
+    width: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.saber-mais-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #15ce52;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px; /* Ajuste conforme necessário */
+}
+
+
+.imagem-projeto {
+    width: 40%;
+    max-width: 400px; /* Ajuste conforme necessário */
+}
+
+.imagem-projeto2 {
+    width: 40%;
+    max-width: 400px; /* Ajuste conforme necessário */
+}
+
+.desc-projeto {
+    width: 100%;
+    max-width: 800px; /* Ajuste conforme necessário */
+    padding: 0 1.6rem; /* Adicione um espaçamento interno */
+}
+
+/* Ajuste as posições absolutas e os valores conforme necessário para cada projeto */
+.projeto:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 1024px) {
+    .projeto {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .imagem-projeto {
+        width: 100%;
+        max-width: none;
+    }
+
+	.imagem-projeto2{
+		width: 50%;
+	}
+
+    .desc-projeto {
+        width: 100%;
+        max-width: none;
+        padding: 0; /* Remova o espaçamento interno em telas menores */
+    }
+}
+
+.desc-projeto h3 {
+    font-size: 1.8rem; /* Ajuste conforme necessário */
+    line-height: 2.2rem; /* Adicione um espaçamento entre linhas */
+}
+
+.desc-projeto h2 {
+    font-size: 2.2rem; /* Ajuste conforme necessário */
+    font-weight: bold;
+}
+
+.desc-projeto h3 {
+    font-size: 1.8rem; /* Ajuste conforme necessário */
+    line-height: 2.2rem; /* Adicione um espaçamento entre linhas */
+    font-weight: normal; /* Deixe a descrição com a fonte normal */
+}
+
+
+#curiosidades {
+    background-color: #fff; /* Adiciona o fundo branco à seção de curiosidades */
+    padding: 5rem 0; /* Ajusta o espaçamento interno */
+}
+
+.curiosidades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1.6rem;
+}
+
+.curiosidade {
+    flex-basis: calc(50% - 1.6rem);
+    background: #def3b9;
+    cursor: pointer;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.6rem;
+}
+
+.curiosidade__thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.curiosidade__thumb img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.curiosidade__info {
+    padding: 1.6rem;
+}
+
+.curiosidade__titulo {
+    font-size: 2.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.curiosidade__descricao {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.noticia {
+    background-color: #DEF8AF; /* Cor de fundo da notícia */
+    padding: 1.6rem;
+    width: calc(50% - 2.4rem);
+    margin-bottom: 2rem;
+    transition: transform 0.3s; /* Adiciona transição suave para o efeito de levantamento */
+}
+
+.noticia:hover {
+    transform: translateY(-5px); /* Move a notícia para cima ao passar o mouse */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao efeito de levantamento */
+}
+
+.saber-mais-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #88CC11;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .noticia {
+        width: calc(100% - 3.2rem); /* 100% da largura menos o espaçamento */
+    }
+}
+
+
+/*Instagram e twitter*/
+.img4 {
+	width: 20px;
+	position: absolute;
+	top: 2.3rem;
+	right: 170px;
+}
+ 
+.img5 {
+	width: 20px;
+	position: absolute;
+	top: 2.3rem;
+	right: 130px;
+}
+
+
+.footer {
+    background: var(--clr-dark-green);
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-align: center;
+    padding: 7.2rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footer-list__item {
+    margin-right: 20px;
+}
+
+.footer-list__link {
+    color: white;
+    transition: color 0.3s;
+}
+
+.footer-list__link:hover {
+    color: var(--clr-medium-green);
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-icon {
+    margin-right: 20px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+.date::after {
+    content: "\a";
+    white-space: pre;
+}
+
+.copyright {
+    color: var(--clr-white);
+    font-size: 1.4rem;
+}
